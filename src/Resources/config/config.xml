@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/shopware/platform/trunk/src/Core/System/SystemConfig/Schema/config.xsd">
+
+    <card>
+        <title lang="en-GB">XPayr API Configuration</title>
+        <title lang="de-DE">XPayr API Konfiguration</title>
+
+        <input-field type="text">
+            <name>apiBaseUrl</name>
+            <label lang="en-GB">API Base URL</label>
+            <label lang="de-DE">API Basis-URL</label>
+            <placeholder>https://xpayr.com/api/v1</placeholder>
+            <helpText lang="en-GB">XPayr API base URL. Do not change unless instructed.</helpText>
+            <defaultValue>https://xpayr.com/api/v1</defaultValue>
+        </input-field>
+
+        <input-field type="password">
+            <name>secretKey</name>
+            <label lang="en-GB">Secret API Key</label>
+            <label lang="de-DE">Geheimer API-Schluessel</label>
+            <placeholder>sk_test_... or sk_live_...</placeholder>
+            <helpText lang="en-GB">Your XPayr secret key from the merchant dashboard.</helpText>
+        </input-field>
+
+        <input-field type="single-select">
+            <name>network</name>
+            <label lang="en-GB">Blockchain Network</label>
+            <label lang="de-DE">Blockchain-Netzwerk</label>
+            <helpText lang="en-GB">Select the blockchain network for payment processing.</helpText>
+            <defaultValue>bsc-testnet</defaultValue>
+            <options>
+                <!-- Mainnets -->
+                <option><id>ethereum-mainnet</id><name lang="en-GB">Ethereum Mainnet</name></option>
+                <option><id>bsc-mainnet</id><name lang="en-GB">BSC Mainnet</name></option>
+                <option><id>polygon-mainnet</id><name lang="en-GB">Polygon Mainnet</name></option>
+                <option><id>base-mainnet</id><name lang="en-GB">Base Mainnet</name></option>
+                <option><id>arbitrum-one</id><name lang="en-GB">Arbitrum One</name></option>
+                <option><id>avalanche-c-chain</id><name lang="en-GB">Avalanche C-Chain</name></option>
+                <option><id>optimism-mainnet</id><name lang="en-GB">Optimism Mainnet</name></option>
+                <!-- Testnets -->
+                <option><id>ethereum-testnet</id><name lang="en-GB">Sepolia (Ethereum Testnet)</name></option>
+                <option><id>bsc-testnet</id><name lang="en-GB">BSC Testnet</name></option>
+                <option><id>polygon-testnet</id><name lang="en-GB">Polygon Amoy (Testnet)</name></option>
+                <option><id>base-testnet</id><name lang="en-GB">Base Sepolia (Testnet)</name></option>
+                <option><id>arbitrum-testnet</id><name lang="en-GB">Arbitrum Sepolia (Testnet)</name></option>
+                <option><id>avalanche-testnet</id><name lang="en-GB">Avalanche Fuji (Testnet)</name></option>
+                <option><id>optimism-sepolia</id><name lang="en-GB">Optimism Sepolia (Testnet)</name></option>
+            </options>
+        </input-field>
+
+        <input-field type="single-select">
+            <name>currency</name>
+            <label lang="en-GB">Settlement Currency</label>
+            <label lang="de-DE">Abrechnungswaehrung</label>
+            <helpText lang="en-GB">Crypto currency to accept as payment.</helpText>
+            <defaultValue>USDC</defaultValue>
+            <options>
+                <option><id>USDC</id><name lang="en-GB">USDC (USD Coin)</name></option>
+                <option><id>USDT</id><name lang="en-GB">USDT (Tether)</name></option>
+                <option><id>ETH</id><name lang="en-GB">ETH (Ethereum)</name></option>
+                <option><id>WETH</id><name lang="en-GB">WETH (Wrapped Ether)</name></option>
+                <option><id>BNB</id><name lang="en-GB">BNB (Binance Coin)</name></option>
+                <option><id>WBNB</id><name lang="en-GB">WBNB (Wrapped BNB)</name></option>
+                <option><id>BSC-USD</id><name lang="en-GB">BSC-USD</name></option>
+                <option><id>POL</id><name lang="en-GB">POL (Polygon Eco Token)</name></option>
+                <option><id>AVAX</id><name lang="en-GB">AVAX (Avalanche)</name></option>
+                <option><id>WAVAX</id><name lang="en-GB">WAVAX (Wrapped AVAX)</name></option>
+                <option><id>ARB</id><name lang="en-GB">ARB (Arbitrum)</name></option>
+                <option><id>OP</id><name lang="en-GB">OP (Optimism)</name></option>
+                <option><id>SOL</id><name lang="en-GB">SOL (Solana)</name></option>
+                <option><id>TRX</id><name lang="en-GB">TRX (TRON)</name></option>
+                <option><id>WBTC</id><name lang="en-GB">WBTC (Wrapped BTC)</name></option>
+                <option><id>BTC.b</id><name lang="en-GB">BTC.b</name></option>
+                <option><id>DOGE</id><name lang="en-GB">DOGE (Dogecoin)</name></option>
+                <option><id>SHIB</id><name lang="en-GB">SHIB (SHIBA INU)</name></option>
+                <option><id>DAI</id><name lang="en-GB">DAI (Dai Stablecoin)</name></option>
+                <option><id>XPAYR</id><name lang="en-GB">XPAYR</name></option>
+                <option><id>TXPAYR</id><name lang="en-GB">TXPAYR</name></option>
+            </options>
+        </input-field>
+    </card>
+
+    <card>
+        <title lang="en-GB">Webhook Settings</title>
+        <title lang="de-DE">Webhook-Einstellungen</title>
+
+        <input-field type="text">
+            <name>webhookSecret</name>
+            <label lang="en-GB">Webhook Secret</label>
+            <label lang="de-DE">Webhook-Geheimnis</label>
+            <helpText lang="en-GB">Used to verify X-XPayr-Signature header on incoming webhooks. Set this in XPayr dashboard.</helpText>
+        </input-field>
+
+        <input-field type="text">
+            <name>webhookUrl</name>
+            <label lang="en-GB">Your Webhook URL</label>
+            <label lang="de-DE">Ihre Webhook-URL</label>
+            <helpText lang="en-GB">Copy this URL to your XPayr merchant dashboard webhook settings.</helpText>
+        </input-field>
+    </card>
+
+    <card>
+        <title lang="en-GB">Debug</title>
+        <title lang="de-DE">Debugging</title>
+
+        <input-field type="bool">
+            <name>debugEnabled</name>
+            <label lang="en-GB">Enable Debug Logging</label>
+            <label lang="de-DE">Debug-Logging aktivieren</label>
+            <helpText lang="en-GB">Log API requests and webhook events to Shopware log files.</helpText>
+            <defaultValue>false</defaultValue>
+        </input-field>
+    </card>
+
+</config>
