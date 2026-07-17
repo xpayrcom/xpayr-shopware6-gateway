@@ -1,0 +1,11 @@
+name: Daily repository health
+on:
+  schedule:
+    - cron: '49 5 * * *'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  health:
+    uses: xpayrcom/xpayrcom/.github/workflows/repository-health.yml@main
+
