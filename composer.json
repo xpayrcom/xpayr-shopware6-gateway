@@ -3,6 +3,7 @@
     "description": "XPayr Crypto Payment Gateway for Shopware 6. Accept non-custodial crypto payments via hosted checkout.",
     "type": "shopware-platform-plugin",
     "license": "MIT",
+    "homepage": "https://xpayr.com/developers",
     "autoload": {
         "psr-4": {
             "XPayrPlugin\\": "src/"
@@ -17,7 +18,12 @@
         }
     ],
     "require": {
-        "shopware/core": ">=6.5"
+        "shopware/core": "^6.7"
+    },
+    "support": {
+        "docs": "https://xpayr.com/developers",
+        "issues": "https://github.com/xpayrcom/xpayr-shopware6-gateway/issues",
+        "source": "https://github.com/xpayrcom/xpayr-shopware6-gateway"
     },
     "extra": {
         "shopware-plugin-class": "XPayrPlugin\\XPayrPlugin",

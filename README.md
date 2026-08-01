@@ -11,7 +11,7 @@ Non-custodial crypto checkout plugin for Shopware 6 stores.
 - Configurable blockchain network and settlement currency via admin dropdown
 
 ## Requirements
-- Shopware 6.5+ or 6.6+
+- Shopware 6.7+
 - PHP 8.1+
 - cURL extension
 
